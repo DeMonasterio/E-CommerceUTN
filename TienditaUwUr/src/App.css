@@ -1,0 +1,25 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    /* outline: 1px solid red; */
+}
+
+
+h1{
+    text-align: center;
+    padding: .5em;
+}
+
+.products--container{
+    display: flex;
+    flex-direction: column;
+}
+
+article {
+    margin: 1em .5em;
+    padding: 1em;
+    background-color: gainsboro;
+    border: 1px solid black;
+    border-radius: 15%;
+}
