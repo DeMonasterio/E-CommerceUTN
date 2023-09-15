@@ -1,12 +1,12 @@
 import "./css/SearchBar.css"
+import { useState } from "react";
 
-const SearchBar = ({ onChangeText }) => {
+
+function SearchBar(){
   return (
     <>
       <form>
-
         <input
-          onChange={onChangeText}
           type="search"
           name="search"
           id="search"
@@ -14,8 +14,7 @@ const SearchBar = ({ onChangeText }) => {
         />
       <input type="submit" value="Buscar!" />
       </form>
-
-    </>
+  </>
   );
 };
 

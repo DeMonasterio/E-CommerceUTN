@@ -2,13 +2,7 @@
 *{
     margin: 0;
     padding: 0;
-    /* outline: 1px solid red; */
-}
-
-
-h1{
-    text-align: center;
-    padding: .5em;
+    outline: 1px solid red;
 }
 
 .products--container{
@@ -22,4 +16,12 @@ article {
     background-color: gainsboro;
     border: 1px solid black;
     border-radius: 15%;
+}
+
+
+.hero__title{
+    display: flex;
+    text-align: center;
+    padding: .5em;
+    justify-content: space-around;
 }

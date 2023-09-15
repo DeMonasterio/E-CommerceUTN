@@ -1,0 +1,10 @@
+.navbar__menu{
+    color: white;
+    background-color: blueviolet;
+    padding: 1em .5em;
+    text-align: center;
+    gap: 1em;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}

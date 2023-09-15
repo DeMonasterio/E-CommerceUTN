@@ -1,16 +1,22 @@
 import "./css/ProductCard.css";
 import { useState } from "react";
-function ProductCard({ p }) {
-  const [isFullDescription, setIsFullDescription] = useState(false);
-  const handleExpand = () => {
-    setIsFullDescription(!isFullDescription);
-  };
-  return (
 
+
+
+
+function ProductCard({ p }) {
+
+  let searchedText = "Gold";
+  // console.log(p.title.includes(searchedText))
+  if (!p.title.includes(searchedText)) {
+    return null;
+  }
+
+  return (
     <article>
       <h2 className="titles">{p.title}</h2>
       <div className="product--container">
-        <img className="product--image" src={p.image} alt={p.title}/>
+        <img className="product--image" src={p.image} alt={p.title} />
         <div className="product-description">
           <p>{p.category}</p>
           <p>${p.price}</p>
@@ -18,7 +24,6 @@ function ProductCard({ p }) {
         </div>
       </div>
     </article>
-  );
-}
+  )}
 
-export default ProductCard;
+  export default ProductCard;
