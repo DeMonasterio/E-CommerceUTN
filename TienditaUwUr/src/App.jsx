@@ -8,6 +8,7 @@ import SearchBar from "./components/SearchBar";
 function App() {
   const [products, setProducts] = useState([]);
   const [searchText, setSearchText] = useState("");
+  
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
@@ -28,7 +29,7 @@ function App() {
           <h2>C</h2>
         </div>
         <NavBar />
-        <SearchBar />
+        <SearchBar/>
       </header>
       <main>
         <div className="products--container">
