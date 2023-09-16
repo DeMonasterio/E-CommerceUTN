@@ -1,4 +1,14 @@
-form{
+.searchbarform{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: .5em 1em;
+}
+.searchbarinput{
+    padding: .25em 1em;
+}
+.submitbtn{
+    background-color: blueviolet;
+    color: white;
+    border: none;
+    padding: .25em .5em;
 }

@@ -1,18 +1,14 @@
 import "./css/ProductCard.css";
-import { useState } from "react";
 
 
 
-
-function ProductCard({ p }) {
-
-  let searchedText = "Gold";
-  // console.log(p.title.includes(searchedText))
-  if (!p.title.includes(searchedText)) {
-    return null;
+function ProductCard({ p, searchedText}) {
+  if (!p.title.toLowerCase().includes(searchedText.toLowerCase()) ) {
+    return <></>;
   }
 
   return (
+    <>
     <article>
       <h2 className="titles">{p.title}</h2>
       <div className="product--container">
@@ -24,6 +20,7 @@ function ProductCard({ p }) {
         </div>
       </div>
     </article>
+    </>
   )}
 
   export default ProductCard;
