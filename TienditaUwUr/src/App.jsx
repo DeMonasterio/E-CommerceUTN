@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import ProductCard from "./components/ProductCard";
 import NavBar from "./components/NavBar.jsx";
@@ -8,6 +8,7 @@ import Filters from "./components/Filters.jsx";
 function App() {
   const [minToMaxPrice, setminToMaxPrice] = useState(0);
   const [maxToMinPrice, setmaxtoMinPrice] = useState(0);
+  const [Alphab, setAlphab] = useState()
   const [products, setProducts] = useState([]);
   const [searchedText, setSearchedText] = useState("");
   const [RangeValue, setRangeValue] = useState(1000);
@@ -51,9 +52,19 @@ const sortProducts = (product, arrayProducts) => {
       noOrderCase(product, arrayProducts)
     }
   }
-  
+
+  if(Alphab === true) {
+    const rta = arrayProducts.sort(function(a, b){
+      if(a.title.toLowerCase() < b.title.toLowerCase()) { return -1; }
+      if(a.title.toLowerCase() > b.title.toLowerCase()) { return 1; }
+      return 0;
+    })
+  } 
   //  Fin del Ordenamiento de mayor a menor
-  
+
+
+
+
   return (
     <>
       <NavBar />
@@ -64,6 +75,7 @@ const sortProducts = (product, arrayProducts) => {
           setRangeValue={setRangeValue}
           setmaxtoMinPrice={setmaxtoMinPrice}
           setminToMaxPrice={setminToMaxPrice}
+          setAlphab={setAlphab}
         />
 
         <div className="products--container">

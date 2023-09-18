@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react'
 import "./css/Filters.css"
-export default function Filters({ RangeValue, setRangeValue, setminToMaxPrice, setmaxtoMinPrice }) {
+export default function Filters({ RangeValue, setRangeValue, setminToMaxPrice, setmaxtoMinPrice, setAlphab }) {
 
     const Bettini = useRef(null);
     const Marce = useRef(null);
@@ -11,19 +11,22 @@ export default function Filters({ RangeValue, setRangeValue, setminToMaxPrice, s
 
     const handleCheck = (e) => {
         if (Bettini.current && Marce.current) {
-                if (e.target === Bettini.current) {
-                    Marce.current.checked = false
-                    setmaxtoMinPrice(false)
-                    setminToMaxPrice(Bettini.current.checked)
+            if (e.target === Bettini.current) {
+                Marce.current.checked = false
+                setmaxtoMinPrice(false)
+                setminToMaxPrice(Bettini.current.checked)
 
-                }
-                if(e.target === Marce.current) {
-                    Bettini.current.checked = false
-                    setminToMaxPrice(false)
-                    setmaxtoMinPrice(Marce.current.checked)
-                }
+            }
+            if (e.target === Marce.current) {
+                Bettini.current.checked = false
+                setminToMaxPrice(false)
+                setmaxtoMinPrice(Marce.current.checked)
+            }
         }
-        
+    }
+
+    const handleAlphabetic = (e) => {
+        setAlphab(e.target.checked)
     }
 
 
@@ -69,7 +72,7 @@ export default function Filters({ RangeValue, setRangeValue, setminToMaxPrice, s
 
                 <div className='div'>
                     <label htmlFor="alphab">Alfabeticamente</label>
-                    <input type="checkbox" id='alphab' />
+                    <input type="checkbox" id='alphab' onChange={(e) => handleAlphabetic(e)} />
 
                 </div>
             </div>
