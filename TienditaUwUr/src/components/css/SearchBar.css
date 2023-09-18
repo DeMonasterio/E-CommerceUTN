@@ -1,14 +1,22 @@
 .searchbarform{
     display: flex;
-    justify-content: space-between;
-    padding: .5em 1em;
+    padding: 1em 1em;
+    gap: .5em;
 }
 .searchbarinput{
     padding: .25em 1em;
+    border: 1px solid darkslateblue;
+    background-color: white;
+    width: 80%;
 }
+
+input::placeholder{
+    color: darkslateblue;
+}
+
 .submitbtn{
-    background-color: blueviolet;
-    color: white;
+    background-color: darkslateblue;
+    color: whitesmoke;
     border: none;
     padding: .25em .5em;
 }

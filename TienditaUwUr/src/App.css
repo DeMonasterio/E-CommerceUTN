@@ -2,7 +2,13 @@
 *{
     margin: 0;
     padding: 0;
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+main{
+    color: whitesmoke;
+    font-size: clamp(1.04em, 4.8vw, 1em);
 }
 
 .products--container{
@@ -13,9 +19,9 @@
 article {
     margin: 1em .5em;
     padding: 1em;
-    background-color: gainsboro;
-    border: 1px solid black;
-    border-radius: 15%;
+    background-color: darkslateblue;
+    border-radius: 20px;
+
 }
 
 

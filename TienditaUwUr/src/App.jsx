@@ -6,9 +6,10 @@ import SearchBar from "./components/SearchBar.jsx";
 import Filters from "./components/Filters.jsx"
 
 function App() {
+  const [maxPrice, setmaxPrice] = useState(0);
   const [products, setProducts] = useState([]);
   const [searchedText, setSearchedText] = useState("");
-  
+  const [RangeValue, setRangeValue] = useState(999.99)
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
@@ -22,13 +23,14 @@ function App() {
         setSearchedText={setSearchedText}
         />
       <main>
-        <Filters />
+        <Filters RangeValue={RangeValue} setRangeValue={setRangeValue} />
         <div className="products--container">
           {products.map((p) => (
           <ProductCard 
           p={p} 
           key={p.id}
           searchedText={searchedText}
+          RangeValue={RangeValue}
           />))}
         </div>
       </main>
