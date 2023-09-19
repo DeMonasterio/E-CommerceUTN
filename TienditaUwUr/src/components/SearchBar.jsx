@@ -5,8 +5,6 @@ import "./css/SearchBar.css";
 function SearchBar({setSearchedText}) {
 
   const [UnLujoAsiatico, setUnLujoAsiatico] = useState("")
-
-
   const handleInputChange = (e) => {
     setUnLujoAsiatico(e.target.value);
   }
@@ -14,6 +12,7 @@ function SearchBar({setSearchedText}) {
     e.preventDefault();
       setSearchedText(UnLujoAsiatico)
     } 
+
 
   return (
     <form onSubmit={handleSubmit} className="searchbarform">
@@ -23,12 +22,10 @@ function SearchBar({setSearchedText}) {
         name="search"
         id="search"
         placeholder="There's a search to do"
-        value={UnLujoAsiatico}
         onChange={handleInputChange}
       />
       <button className="submitbtn" type="submit">Buscar!</button>
     </form>
   );
 }
-
 export default SearchBar;
