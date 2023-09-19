@@ -20,9 +20,9 @@ function App() {
       .then((prod) => setProducts(prod));
   }, []);
 
-//  Ordenamiento de mayor a menor
-const sortProducts = (product, arrayProducts) => {
-  arrayProducts.push(product);
+  //  Ordenamiento de mayor a menor
+  const sortProducts = (product, arrayProducts) => {
+    arrayProducts.push(product);
     arrayProducts.sort((a, b) => a.price - b.price);
   }
 
@@ -31,7 +31,7 @@ const sortProducts = (product, arrayProducts) => {
     arrayProducts.sort((a, b) => b.price - a.price);
   }
 
-  const noOrderCase = (product, arrayProducts) =>{
+  const noOrderCase = (product, arrayProducts) => {
     arrayProducts.push(product);
   }
 
@@ -45,7 +45,7 @@ const sortProducts = (product, arrayProducts) => {
       for (const product of products) {
         sortProductsMax(product, arrayProducts)
       }
-      
+
     }
   } else {
     for (const product of products) {
@@ -53,13 +53,13 @@ const sortProducts = (product, arrayProducts) => {
     }
   }
 
-  if(Alphab === true) {
-    const rta = arrayProducts.sort(function(a, b){
-      if(a.title.toLowerCase() < b.title.toLowerCase()) { return -1; }
-      if(a.title.toLowerCase() > b.title.toLowerCase()) { return 1; }
+  if (Alphab === true) {
+    const rta = arrayProducts.sort(function (a, b) {
+      if (a.title.toLowerCase() < b.title.toLowerCase()) { return -1; }
+      if (a.title.toLowerCase() > b.title.toLowerCase()) { return 1; }
       return 0;
     })
-  } 
+  }
   //  Fin del Ordenamiento de mayor a menor
 
 
@@ -67,27 +67,35 @@ const sortProducts = (product, arrayProducts) => {
 
   return (
     <>
-      <NavBar />
-      <SearchBar setSearchedText={setSearchedText} />
       <main>
-        <Filters
-          RangeValue={RangeValue}
-          setRangeValue={setRangeValue}
-          setmaxtoMinPrice={setmaxtoMinPrice}
-          setminToMaxPrice={setminToMaxPrice}
-          setAlphab={setAlphab}
-        />
+        <ul>
+        <div className="navBar">
+          <NavBar />
+          <SearchBar setSearchedText={setSearchedText} />
 
+          <Filters
+            RangeValue={RangeValue}
+            setRangeValue={setRangeValue}
+            setmaxtoMinPrice={setmaxtoMinPrice}
+            setminToMaxPrice={setminToMaxPrice}
+            setAlphab={setAlphab}
+          />
+        </div>
+
+        
         <div className="products--container">
+         
           {arrayProducts.map((p) => (
-            <ProductCard
+           <li> <ProductCard
               p={p}
               key={p.id}
               searchedText={searchedText}
               RangeValue={RangeValue}
-            />
+            />  </li> 
+
           ))}
-        </div>
+          </div>
+        </ul>
       </main>
     </>
   );

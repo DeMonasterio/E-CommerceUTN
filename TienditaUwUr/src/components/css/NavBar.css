@@ -1,14 +1,24 @@
 
 h1{
   color: lightgreen;
+ 
+}
+.NavBar {
+  background-color: white;
+  padding: 50px
+
 }
 
 .carrito{
   color: lightgreen;
+  padding-top: 8px;
+  
+
 }
 
 
 .hero__title {
+  
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
@@ -30,12 +40,14 @@ h1{
   transform: rotate(60deg);
   bottom: 17px;
   right: 15px;
+ 
   transition: all 0.3s;
 }
 .header__checkbox:not(:checked) + .header__label .header__icon:nth-child(2) {
   transform: rotate(-60deg);
   top: 20px;
   left: 14px;
+
   transition: all 0.3s;
 }
 .header__checkbox:not(:checked) + .header__label .header__icon:nth-child(3) {
@@ -78,6 +90,7 @@ h1{
 }
 
 .header__label {
+  
   display: flex;
   flex-direction: column;
   position: relative;

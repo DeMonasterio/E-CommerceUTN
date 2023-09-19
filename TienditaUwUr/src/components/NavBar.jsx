@@ -1,5 +1,9 @@
 import React from 'react'
 import "./css/NavBar.css"
+
+import { FaShoppingCart  } from 'react-icons/fa'
+
+
 function NavBar() {
   return (
     <>
@@ -12,7 +16,9 @@ function NavBar() {
             <span className='header__icon'></span>
           </label>
           <h1>TienditaUwUr</h1>
-          <h2 className='carrito' >C</h2>{/*  C de carrito falta hacerlo */}
+          <h2 className='carrito' ><FaShoppingCart />
+         
+          </h2>{/*  C de carrito falta hacerlo */}
           {/*Categorias  Ventas Contacto Envios AboutUs */}
             <ul className='hero__nav'>
               <li>Categorias</li>

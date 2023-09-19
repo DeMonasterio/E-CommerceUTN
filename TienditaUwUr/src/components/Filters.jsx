@@ -34,6 +34,11 @@ export default function Filters({ RangeValue, setRangeValue, setminToMaxPrice, s
 
     return (
         <div className='filter__container'>
+             <form>
+                <label htmlFor="rango" className='rango'>Precio Máximo</label>
+                <input onChange={handleChange} value={RangeValue} type="range" id="rango" name="rango" min="0" max="1000" step="1" />
+                <output htmlFor="rango" id="valor">{RangeValue}</output>
+            </form>
 
             <input className='filter__checkbox' type="checkbox" name="" id="filtrado" />
             <label className='filter__label' htmlFor="filtrado">
@@ -42,11 +47,7 @@ export default function Filters({ RangeValue, setRangeValue, setminToMaxPrice, s
                 <span className='filter__icon'></span>
             </label>
 
-            <form>
-                <label htmlFor="rango">Precio Máximo</label>
-                <input onChange={handleChange} value={RangeValue} type="range" id="rango" name="rango" min="0" max="1000" step="1" />
-                <output htmlFor="rango" id="valor">{RangeValue}</output>
-            </form>
+           
 
 
 
@@ -64,9 +65,6 @@ export default function Filters({ RangeValue, setRangeValue, setminToMaxPrice, s
                     <label htmlFor="maxprice">Mayor a Menor</label>
                     <input type="checkbox" id='maxprice' ref={Marce} onChange={e => handleCheck(e)} />
                 </div>
-
-
-
 
 
 
