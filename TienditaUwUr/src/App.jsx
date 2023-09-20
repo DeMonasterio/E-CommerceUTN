@@ -62,6 +62,7 @@ function App() {
       noOrderCase(product, arrayProducts)
     }
   }
+
   if (Alphab === true) {
     const rta = arrayProducts.sort(function (a, b) {
       if (a.title.toLowerCase() < b.title.toLowerCase()) { return -1; }
@@ -73,17 +74,16 @@ function App() {
 
 
 
-
-
   return (
     <>
-      <NavBar />
-      <SearchBar setSearchedText={setSearchedText} />
       <main>
-        <Filters RangeValue={RangeValue} setRangeValue={setRangeValue}
-         setmaxtoMinPrice={setmaxtoMinPrice}
-          setminToMaxPrice={setminToMaxPrice} setAlphab={setAlphab} />
-
+          <Filters
+            RangeValue={RangeValue}
+            setRangeValue={setRangeValue}
+            setmaxtoMinPrice={setmaxtoMinPrice}
+            setminToMaxPrice={setminToMaxPrice}
+            setAlphab={setAlphab}
+          />
         <div className="products--container">
           {arrayProducts.map((p) => (<ProductCard p={p} key={p.id} searchedText={searchedText} RangeValue={RangeValue} />))}
         </div>

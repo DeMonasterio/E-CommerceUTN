@@ -1,18 +1,130 @@
 
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.products--container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+ 
+}
+
+
+article {
+  
+    gap: 1rem;
+    width: 340px;
+    margin: 2em .5em;
+    padding: 19px;
+    background-color: darkslateblue;
+    border-radius: 20px;
+    background: rgba(72, 61, 139, 0.6);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(11.5px);
+    -webkit-backdrop-filter: blur(11.5px);
+    border: 1px solid rgba(72, 61, 139, 0.3);
+   justify-content: center;
+
+}
+ 
+  
+  
+
+
 .product--container{
     display: flex;
     justify-content: center;
-    gap: 2.5em;
+    gap: 1em;
+    flex-direction: column;
+    padding: 10%;
+    
+
 }
 
 
-.product--image{
-    width: 30%;
-}
+
 
 .product-description{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 1em;
+    gap: 0.5em;
 }
+
+/* Estilos para el título del producto */
+.titles {
+    font-size: 1.5rem; /* Aumenta el tamaño del título */
+    margin: 0; /* Elimina el margen superior e inferior para centrarlo verticalmente */
+    color: white;
+    text-align: center;
+     /* Centra el texto horizontalmente */
+  }
+  
+  .article:hover {
+    transform: scale(1.05);
+  }
+  
+  
+  /* Estilos para la imagen del producto */
+  .product--image {
+   
+    width: 240px; /* Ancho de la imagen */
+    height: 200px; /* Altura de la imagen */
+    object-fit: contain; /* Mantiene la relación de aspecto sin cambiar el tamaño */
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: white;
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+    display: block; /* Evita el espacio adicional debajo de la imagen */
+    padding: 20px;
+    /* Añade un poco de ancho al fondo blanco */
+  }
+  
+  /* Estilos para la descripción del producto */
+  .product-description {
+    margin-top: 10px; /* Espacio superior entre la imagen y la descripción */
+  }
+  
+  .product-description p {
+    font-size: 1.1rem;
+    color: whitesmoke;
+    margin-bottom: 5px; 
+    margin-top: 0px; /* Espacio superior entre la imagen y la descripción */
+    text-align: center; /* Centra el texto horizontalmente */
+    ;/* Espacio inferior entre las líneas de texto */
+    
+  }
+  
+  /* Estilos para el precio del producto */
+  .product-description .product--price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    border-radius: 36px;
+  }
+  
+  /* Estilos para el botón "Añadir al carrito" */
+  .product-description button {
+    background-color: #3dd28d;
+    margin-top: 2px;
+    margin-bottom: 0;
+    color: #fff;
+    padding: 8px 2px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.5rem;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .product-description button:hover {
+    background-color: #ff4500;
+  }
+  
+

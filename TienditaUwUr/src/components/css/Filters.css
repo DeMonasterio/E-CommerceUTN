@@ -1,17 +1,31 @@
 
+.filter__container .rango  {
+display: flexbox;
+padding-right: 30px;
+color: blueviolet;
+padding-top: 6px;
+}
+
 
 .filter__container {
-  display: grid;
-  padding: 0 1em; 
+  display: flex;
+  text-align: center;
+  padding: 45 16em; 
+  
+  justify-content: space-around;
 }
 
 .filter__checkbox {
   display: none;
+  
+  
+  
 }
 
 
 
 .filter__checkbox:not(:checked) + .filter__label .filter__icon {
+  
   transform: scale(1);
   transition: 0.7s;
   width: 20px;
@@ -51,21 +65,23 @@
 
 .filter__checkbox:checked ~ .filterscontainer {
   display: flex;
-  align-items: center;
-  justify-items: center;
-  padding: 0;
+  padding-top: 35px;
+  padding-bottom: 5px;
+
+  
 }
 
 .filter__label {
     display: flex;
+    flex-direction: column;
     position: relative;
-    gap: 10px;
-    justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  width: 70px;
-  padding: 0 1em 0 0;
-  height: 40px;
+    gap: 30px;
+    justify-content: space-around;
+    cursor: pointer;
+    width: 0;
+    padding: 0 1em 0 0;
+    height: 40px;
+    
 }
 
 .filter__icon {
@@ -77,7 +93,8 @@
 .filterscontainer {
     display: none;
     color: rgb(255, 255, 255);
-    justify-content: space-around;
+    
+    
 }
 
 .div {

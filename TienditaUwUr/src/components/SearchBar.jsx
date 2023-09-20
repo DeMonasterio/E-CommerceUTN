@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import "./css/SearchBar.css";
 
+
 function SearchBar({setSearchedText}) {
 
   const [UnLujoAsiatico, setUnLujoAsiatico] = useState("")
