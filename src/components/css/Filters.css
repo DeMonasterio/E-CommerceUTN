@@ -1,0 +1,141 @@
+
+
+.filter__container {
+  display: grid;
+  background-color: black;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  place-items: center;
+  justify-content: space-around;
+  padding: 0 .5em;
+}
+
+.inputcolor{
+  accent-color: lightgreen;
+}
+
+.filter__range {
+  font-style: italic;
+  font-size: larger;
+  color: blueviolet;
+  grid-area: 1 / 1 / 2 / 4;
+}
+
+.filter__checkbox {
+  display: none;
+}
+
+.filter__checkbox:not(:checked) + .filter__label .filter__icon {
+  width: 20px;
+  position: absolute;
+}
+
+.filter__checkbox:not(:checked) + .filter__label .filter__icon:nth-child(1) {
+  transform: rotateZ(-60deg);
+  bottom: 17px;
+  left: 65px;
+  transition: all 0.4s;
+}
+.filter__checkbox:not(:checked) + .filter__label .filter__icon:nth-child(2) {
+  transform: rotate(-120deg);
+  top: 20px;
+  left: 55px;
+  transition: all 0.4s;
+}
+
+.filter__checkbox:checked + .filter__label .filter__icon {
+  position: absolute;
+  width: 20px;
+}
+.filter__checkbox:checked + .filter__label .filter__icon:nth-child(1) {
+  transform: rotateZ(240deg);
+  bottom: 17px;
+  left: 65px;
+  transition: all 0.3s;
+}
+.filter__checkbox:checked + .filter__label .filter__icon:nth-child(2) {
+  top: 20px;
+  left: 55px;
+  transform: rotateZ(120deg);
+
+  transition: all 0.3s;
+}
+
+.filter__checkbox:checked ~ .filterscontainer {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  padding: 0;
+  grid-area: 2 / 1 / 3 / 5;
+}
+
+.filter__label {
+  grid-area: 1 / 4 / 2 / 5;
+  display: flex;
+  position: relative;
+  /* gap: 10px; */
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 70px;
+  padding: 0 1em 0 0;
+  height: 40px;
+}
+
+.filter__icon {
+  background-color: lightgreen;
+  height: 3px;
+  width: 30px;
+}
+
+.filterscontainer {
+  display: none;
+  accent-color: blueviolet;
+  color: rgb(255, 255, 255);
+  grid-area: 2 / 1 / 3 / 5;
+}
+
+.div{
+  display: flex;
+  
+  color: lightgreen;
+  flex-direction: column;
+  gap: 0.5em;
+  padding: 0.5em 0;
+}
+
+input {
+  background-color: seagreen;
+}
+
+@media (min-width: 340px){
+  .filterscontainer {
+    display: none;
+    accent-color: blueviolet;
+    color: rgb(255, 255, 255);
+    grid-area: 2 / 1 / 3 / 5;
+    gap: 1em;
+  }
+}
+
+@media (min-width: 768px){
+  
+
+  .filterscontainer {
+    display: none;
+    accent-color: blueviolet;
+    color: rgb(255, 255, 255);
+    grid-area: 2 / 4 / 3 / 5;
+  }
+
+  
+.filter__range {
+  font-style: italic;
+  font-size: larger;
+  color: blueviolet;
+  grid-area: 1 / 1 / 3 / 3;
+}
+  
+  }

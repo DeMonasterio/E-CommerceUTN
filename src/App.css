@@ -1,0 +1,19 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    /* outline: 1px solid red; */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+main{
+    color: whitesmoke;
+    font-size: clamp(1.04em, 4.8vw, 1em);
+}
+
+.hero__title{
+    display: flex;
+    text-align: center;
+    padding: .5em;
+    justify-content: space-around;
+}

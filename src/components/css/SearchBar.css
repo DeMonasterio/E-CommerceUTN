@@ -1,0 +1,43 @@
+.searchbarform {
+  display: flex;
+  padding: 0.5em;
+  gap: 0.5em;
+  background-color: black;
+}
+
+.searchbarinput {
+  width: 90%;
+  padding: 0.5em;
+  border-radius: 20px;
+  font-size: large;
+
+  background-color: white;
+  border: 1px solid darkslateblue;
+}
+
+input::placeholder {
+  color: darkslateblue;
+}
+
+.submitbtn {
+  background-color: darkslateblue;
+  color: whitesmoke;
+
+  border-radius: 30px;
+  padding: 0 1em;
+
+  border: none;
+  font-size: large;
+}
+
+@media (min-width: 768px) {
+  .searchbarform {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1em;
+  }
+  .searchbarinput {
+    width: 60%;
+    border-radius: 20px;
+  }
+}

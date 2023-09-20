@@ -1,0 +1,113 @@
+
+h1{
+  color: lightgreen;
+}
+
+.carrito{
+  color: lightgreen;
+  padding-top: 8px;
+}
+
+.hero__title {
+  display: grid;
+  background-color: black;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* Lo siguiente es para el menu desplegable, no me juzgues, solo disfrutalo. */
+
+.header__checkbox {
+  display: none;
+}
+
+.header__checkbox:not(:checked) + .header__label .header__icon {
+  transform: scale(1);
+  transition: 0.7s;
+  width: 20px;
+  position: absolute;
+}
+
+.header__checkbox:not(:checked) + .header__label .header__icon:nth-child(1) {
+  transform: rotate(60deg);
+  bottom: 17px;
+  right: 15px;
+  transition: all 0.3s;
+}
+.header__checkbox:not(:checked) + .header__label .header__icon:nth-child(2) {
+  transform: rotate(-60deg);
+  top: 20px;
+  left: 14px;
+  transition: all 0.3s;
+}
+.header__checkbox:not(:checked) + .header__label .header__icon:nth-child(3) {
+  top: 12px;
+  transition: all 0.3s;
+}
+
+.header__checkbox:checked + .header__label .header__icon {
+  position: absolute;
+  width: 20px;
+}
+.header__checkbox:checked + .header__label .header__icon:nth-child(1) {
+  transform: rotate(60deg);
+
+  bottom: 17px;
+  right: 6px;
+  transition: all 0.3s;
+  background-color: seagreen;
+}
+.header__checkbox:checked + .header__label .header__icon:nth-child(2) {
+  top: 20px;
+  left: 5px;
+  transform: rotate(-60deg);
+
+  transition: all 0.3s;
+  background-color: seagreen;
+}
+.header__checkbox:checked + .header__label .header__icon:nth-child(3) {
+  transform: translateY(9px);
+  transition: all 0.3s;
+  background-color: seagreen;
+}
+
+.header__checkbox:checked ~ .hero__nav {
+  grid-column: 1 / -1;
+  margin: 1rem;
+  display: grid;
+  grid-template-columns: auto;
+  gap: 1em;
+}
+
+.header__label {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+}
+
+.header__icon {
+  background-color: lightgreen;
+  height: 3px;
+  width: 30px;
+}
+
+.hero__nav {
+  display: none;
+  list-style: none;
+}
+
+.hero__nav li {
+  font-size: clamp(1.3em, 4.8vw, 1em);
+  padding: 0.3em;
+  font-style: italic;
+
+  color: whitesmoke;
+  border: 2px outset whitesmoke;
+  background-color: rgb(26, 9, 41);
+  border-radius: .5em;
+}
