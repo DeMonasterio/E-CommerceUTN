@@ -1,34 +1,41 @@
-import React, { useState, useRef } from 'react'
+import React, { useRef } from 'react'
 import "./css/Filters.css"
 export default function Filters({ RangeValue, setRangeValue, setminToMaxPrice, setmaxtoMinPrice, setAlphab }) {
 
     const Bettini = useRef(null);
     const Marce = useRef(null);
+    const voTaLocoVite = useRef(null); 
 
     const handleChange = (e) => {
         setRangeValue(e.target.value);
     }
 
     const handleCheck = (e) => {
-        if (Bettini.current && Marce.current) {
+        if (Bettini.current && Marce.current && voTaLocoVite.current) {
             if (e.target === Bettini.current) {
                 Marce.current.checked = false
+                voTaLocoVite.current.checked = false
                 setmaxtoMinPrice(false)
+                setAlphab(false)
                 setminToMaxPrice(Bettini.current.checked)
-
+                
             }
             if (e.target === Marce.current) {
                 Bettini.current.checked = false
+                voTaLocoVite.current.checked = false
                 setminToMaxPrice(false)
+                setAlphab(false)
                 setmaxtoMinPrice(Marce.current.checked)
+            }
+            if (e.target === voTaLocoVite.current){
+                Bettini.current.checked = false
+                Marce.current.checked = false
+                setmaxtoMinPrice(false)
+                setminToMaxPrice(false)
+                setAlphab(voTaLocoVite.current.checked)
             }
         }
     }
-
-    const handleAlphabetic = (e) => {
-        setAlphab(e.target.checked)
-    }
-
 
 
 
@@ -67,12 +74,12 @@ export default function Filters({ RangeValue, setRangeValue, setminToMaxPrice, s
                 </div>
 
 
-
                 <div className='div'>
                     <label htmlFor="alphab">Alfabeticamente</label>
-                    <input type="checkbox" id='alphab' onChange={(e) => handleAlphabetic(e)} />
-
+                    <input type="checkbox" id='alphab' ref={voTaLocoVite} onChange={(e) => handleCheck(e)} />
                 </div>
+
+                
             </div>
         </div>
     )

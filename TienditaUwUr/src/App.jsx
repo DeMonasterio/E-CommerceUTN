@@ -1,9 +1,16 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import ProductCard from "./components/ProductCard";
 import NavBar from "./components/NavBar.jsx";
 import SearchBar from "./components/SearchBar.jsx";
 import Filters from "./components/Filters.jsx";
+
+
+
+
+
+
+
 
 function App() {
   const [minToMaxPrice, setminToMaxPrice] = useState(0);
@@ -13,6 +20,10 @@ function App() {
   const [searchedText, setSearchedText] = useState("");
   const [RangeValue, setRangeValue] = useState(1000);
   const arrayProducts = [];
+
+
+
+
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
@@ -34,7 +45,6 @@ function App() {
   const noOrderCase = (product, arrayProducts) => {
     arrayProducts.push(product);
   }
-
   if (maxToMinPrice || minToMaxPrice === true) {
     if (minToMaxPrice === true && maxToMinPrice === false) {
       for (const product of products) {
@@ -45,8 +55,8 @@ function App() {
       for (const product of products) {
         sortProductsMax(product, arrayProducts)
       }
-
     }
+    //  Fin del Ordenamiento de mayor a menor
   } else {
     for (const product of products) {
       noOrderCase(product, arrayProducts)
@@ -60,7 +70,6 @@ function App() {
       return 0;
     })
   }
-  //  Fin del Ordenamiento de mayor a menor
 
 
 
@@ -68,11 +77,6 @@ function App() {
   return (
     <>
       <main>
-        <ul>
-        <div className="navBar">
-          <NavBar />
-          <SearchBar setSearchedText={setSearchedText} />
-
           <Filters
             RangeValue={RangeValue}
             setRangeValue={setRangeValue}
@@ -80,22 +84,9 @@ function App() {
             setminToMaxPrice={setminToMaxPrice}
             setAlphab={setAlphab}
           />
-        </div>
-
-        
         <div className="products--container">
-         
-          {arrayProducts.map((p) => (
-           <li> <ProductCard
-              p={p}
-              key={p.id}
-              searchedText={searchedText}
-              RangeValue={RangeValue}
-            />  </li> 
-
-          ))}
-          </div>
-        </ul>
+          {arrayProducts.map((p) => (<ProductCard p={p} key={p.id} searchedText={searchedText} RangeValue={RangeValue} />))}
+        </div>
       </main>
     </>
   );
