@@ -1,0 +1,22 @@
+@font-face {
+  font-family: "minecraftAll";
+  src: url("./assets/font/Profontwindows-L3amg.ttf") format("woff2");
+}
+
+* {
+  font-family: "minecraftAll";
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  color: whitesmoke;
+  font-size: clamp(1.04em, 4.8vw, 1em);
+}
+
+.hero__title {
+  display: flex;
+  text-align: center;
+  padding: 0.5em;
+  justify-content: space-around;
+}
